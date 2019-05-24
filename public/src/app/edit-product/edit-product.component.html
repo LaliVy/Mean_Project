@@ -1,0 +1,40 @@
+<div class="productsHome">
+    <h2>
+      Edit Product
+    </h2>
+    <form  method="POST">
+      <table>
+        <tr>
+
+          <td><label class="col-sm-2 control-label">Title</label></td>
+          <td><input type="text" class="form-control"  [(ngModel)] ="selectedProduct.title" name="selectedProduct.title"/></td>
+          <div *ngIf="selectedProduct.title.length < 3" class="alert alert-warning">Title must be at least 3 characters long</div>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            
+            <td><label class="col-sm-2 control-label">Price</label></td>
+            <td><input type="text" class="form-control"  [(ngModel)] ="selectedProduct.price" name="selectedProduct.price"/></td>
+            <div *ngIf="selectedProduct.price <= 0" class="alert alert-warning">Entered price must be a number.</div>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><label class="col-sm-2 control-label">Image url</label></td>
+            <td><input type="text" class="form-control"  [(ngModel)] ="selectedProduct.url" name="selectedProduct.url"/></td>
+            <div *ngIf="selectedProduct.url.length < 10" class="alert alert-warning">Url should be 10 characters long.</div>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td></td>
+            <td>
+              <button type="button" [disabled]="selectedProduct.title.length < 3"  class="btn btn-success" type="submit" (click)="updateProduct()">Update</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+      </table>
+      
+      
+      
+    </form>
+</div>
+

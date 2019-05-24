@@ -1,0 +1,10 @@
+.productsHome{
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+}
+td img {
+    display:block;
+    width: 25%;
+    height: 25%;
+}

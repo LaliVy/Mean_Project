@@ -1,0 +1,32 @@
+<div class="home">
+    <h2>
+      Create a New Product
+    </h2>
+    <div *ngIf="errors">{{errors.title.message}}</div>
+    <form (submit)="createProduct()" method="POST">
+      <table>
+        <tr>
+          <td><label class="col-sm-2 control-label">Title</label></td>
+          <td><input type="text" class="form-control" [(ngModel)] ="newProduct.title" name="newProduct.title"/></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><label class="col-sm-2 control-label">Price</label></td>
+            <td><input type="text" class="form-control" [(ngModel)] ="newProduct.price" name="newProduct.price"/></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><label class="col-sm-2 control-label">Image url</label></td>
+            <td><input type="text" class="form-control" [(ngModel)] ="newProduct.url" name="newProduct.url"/></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td></td>
+            <td>
+              <button type="button" class="btn btn-success" type="submit">Create</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-danger" [routerLink]="['/products']">Cancel</button>
+            </td>
+        </tr>
+      </table>
+  </form>
+</div>
